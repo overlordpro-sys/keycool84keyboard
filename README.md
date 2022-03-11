@@ -8,7 +8,12 @@ Kailh switch cutouts.
 I copied the raw data for the switches to http://builder.swillkb.com/ to generate a DXF file to use as a outline for switch placement and to later be used after editing for the keyboard plate.
 ![image](https://user-images.githubusercontent.com/64398319/156913561-4abd1c04-be77-456a-a2bf-ec5f8076c4ff.png)
 
-INCLUDE INFORMATION ABOUT THE GRID FOR NKEYROLLOVER
+The most important thing about making this keyboard work however, is how it is wired up. Technically, each switch could be wired to two pins to detect switch input. This obviously is extremely inefficient and would use a lot of pins. The solution to this problem is wiring the switches in a gridlike manner. One issue with this, is that if multiple keys are pressed, some keypresses can be registered incorrectly due to circuits traveling backwards. This is solved by placing a diode with each switch to prevent this backwards flow and makes each keypress distinguishable from others by the Arduino. The way each switch will be connected looks approximately like this:
+![image](https://user-images.githubusercontent.com/64398319/157819797-67bfb5fa-5837-4856-916b-f1252c01b59c.png)
+
+The last thing to consider was the location for each switch in the grid. In order to ensure each column would have six rows, I drew it out on my favorite note taking app to make sure everything would fit nicely.
+
+![image](https://user-images.githubusercontent.com/64398319/157820239-dc672b68-6224-4466-9514-a636d2160237.png)
 
 The next step was actually designing a PCB for this keyboard. For simplicity and to make sure I had enough pins, I decided to use an Arduino Pro Micro for the controller. 
 For the symbols and footprints for the switches and Arduino, I used two KiCad libraries:
@@ -20,14 +25,23 @@ For the necessary diodes, I downloaded the ECAD Model for the 1N4148W-7-F diode 
 After including the libraries in my KiCad project file, I placed and wired the switches in the grid format. 
 ![image](https://user-images.githubusercontent.com/64398319/156914644-28b6951b-53ae-49a6-a32d-6735d501118d.png)
 
-ADD INTERMITENT STEP PICTURES
+After I was finished with the schematic, I used KiCad's Pcbnew to place footprints. Using the DXF file I generated before, I imported the file and moved each associated switch and diode footprint to each cutout on the DXF. I placed the Arduino's footprint to the left and drew a border around the entire PCB. To be able to secure my keyboard plate to the PCB, I also added four holes on each corner where I could use a nut and bolt. 
 
-After I was finished with the schematic, I used KiCad's Pcbnew to place footprints. Using the DXF file I generated before, I imported the file and moved each associated switch and diode footprint to each cutout on the DXF. I placed the Arduino's footprint to the left and drew a border around the entire PCB. To be able to secure my keyboard plate to the PCB, I also added four holes on each corner where I could use a nut and bolt. Finally, I drew edge cuts and added a silk screen layer for a little but of individuality. 
+![image](https://user-images.githubusercontent.com/64398319/157821436-4c10f5d9-3811-41f9-b8b4-d5429ce21891.png)
+
+After getting everything placed, I had to route each connection so none of the traces would overlap. Fortunately, using freeRouting, I was able to autoroute the entire board. I exported the Specctra DSN file and let the app get to work. 
+
+
+
 This was the finished result
 ![image](https://user-images.githubusercontent.com/64398319/156914938-dc3fb73e-8ef6-45d3-b571-433efec00fed.png)
 
+Using the built in 3D PCB viewer, took a look at the 3D model of what the PCB would look like. It was really neat seeing something I had designed myself.
+![image](https://user-images.githubusercontent.com/64398319/157820904-c71715d5-1f2b-48c7-a5bc-12e582cc88d9.png)
+
+
 Now for the plate.
-The easiest way to maintain the same size and location for the screw holes was to make a copy of the old PCB file. After removing the switches, diodes, and Arduino footprints, I was able to  end up with this. 
+The easiest way to maintain the same size and location for the screw holes was to make a copy of the old PCB file. After removing the switches, diodes, and Arduino footprints on a duplicate file, I ended up with a plain outline with screw holes. 
 
 ![image](https://user-images.githubusercontent.com/64398319/156914999-5e441838-1f00-4a85-bbc8-6bfe073fd34e.png)
 
