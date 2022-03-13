@@ -35,13 +35,13 @@ After placing all of the footprints, I routed the PCB using Freerouter. The over
 
 After adding a random bit of silkscreen for fun, this was the finished result:
 
-![image](https://user-images.githubusercontent.com/64398319/156914938-dc3fb73e-8ef6-45d3-b571-433efec00fed.png)
+![image](https://user-images.githubusercontent.com/64398319/158049203-7c9f8214-b44d-4726-a1ab-1919ce9bcc8b.png)
+
 
 Using the built in 3D PCB viewer, took a look at the 3D model of what the PCB would look like. It was really neat seeing something I had designed myself.
 ![image](https://user-images.githubusercontent.com/64398319/157820904-c71715d5-1f2b-48c7-a5bc-12e582cc88d9.png)
 
-
-Now for the plate.
+Now for the keyboard plate.
 The easiest way to maintain the same size and location for the screw holes was to make a copy of the old PCB file. After removing the switches, diodes, and Arduino footprints on a duplicate file, I ended up with a plain outline with screw holes. 
 
 ![image](https://user-images.githubusercontent.com/64398319/156914999-5e441838-1f00-4a85-bbc8-6bfe073fd34e.png)
