@@ -29,11 +29,12 @@ After I was finished with the schematic, I used KiCad's Pcbnew to place footprin
 
 ![image](https://user-images.githubusercontent.com/64398319/157821436-4c10f5d9-3811-41f9-b8b4-d5429ce21891.png)
 
-After getting everything placed, I had to route each connection so none of the traces would overlap. Fortunately, using freeRouting, I was able to autoroute the entire board. I exported the Specctra DSN file and let the app get to work. 
+After placing all of the footprints, I routed the PCB using Freerouter. The overall complexity of the board was not too high, so using an autorouter wouldn't cause any issues.
 
+![image](https://user-images.githubusercontent.com/64398319/158049166-65c9d70e-f2d0-451b-9de9-b5cfaf715907.png)
 
+After adding a random bit of silkscreen for fun, this was the finished result:
 
-This was the finished result
 ![image](https://user-images.githubusercontent.com/64398319/156914938-dc3fb73e-8ef6-45d3-b571-433efec00fed.png)
 
 Using the built in 3D PCB viewer, took a look at the 3D model of what the PCB would look like. It was really neat seeing something I had designed myself.
