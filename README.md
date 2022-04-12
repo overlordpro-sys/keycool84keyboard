@@ -70,3 +70,4 @@ For the plate material, I chose stainless steel for its price and for look. Afte
 
 If I didn't include supports between the metal plate and the PCB, tightening the nut and bolt could cause damage to the PCB. The 3D printer my family had at the time had a small printing area, so I couldn't print something that would encompass or fit between the entirety of the keyboard. Printing it in multiple parts would be difficult as well, since the print would be so thin. The best I could compromise was to print two small pieces with bolt holes that would fit in the ~3.5mm space between the plate and PCB.
 
+notes: removed everything almost from kicad pcb file, exported to dxf, used autodesk fusion 360 dxf importer utility using 3.50mm thickness, file 3d print, export to cura
