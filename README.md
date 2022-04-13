@@ -55,6 +55,9 @@ After adding a random bit of silkscreen for fun, this was the finished result:
 Using the built in 3D PCB viewer, took a look at the 3D model of what the PCB would look like. It was really neat seeing something I had designed myself.
 ![image](https://user-images.githubusercontent.com/64398319/157820904-c71715d5-1f2b-48c7-a5bc-12e582cc88d9.png)
 
+Here's what they looked like when they came:
+![image](https://user-images.githubusercontent.com/64398319/163095199-d4282166-2887-47cb-b82f-f2c585919dc5.png)
+
 # The Plate
 The easiest way to maintain the same size and location for the screw holes was to make a copy of the old PCB file. After removing the switches, diodes, and Arduino footprints on a duplicate file, I ended up with a plain outline with screw holes. 
 
@@ -65,6 +68,9 @@ After exporting that to a DXF and removing any duplicate geometry, it was ready 
 ![image](https://user-images.githubusercontent.com/64398319/156915136-90c74858-9eef-4488-aee6-487e9e8ca6b9.png)
 
 After doing some research, I chose SendCutSend to cut my plate. In order for the switches to slot into the plate, the plate had to be a certain width, so the 0.060 inch (about 1.5mm) thick stainless steel material SendCutSend supplied was great. 
+
+Unfortunately, I didn't take a very good picture before I soldered everything together, so this is the only picture I have of the plate by itself. 
+![image](https://user-images.githubusercontent.com/64398319/163095856-64816638-67b0-4505-9fdb-85be14e450b3.png)
 
 # 3D Printing the middle
 
@@ -80,3 +86,4 @@ After that, I exported each part into Cura with Fusion's built in exporter, merg
 
 
 
+![image](https://user-images.githubusercontent.com/64398319/163095992-90e54a77-97ab-4044-b17c-40da664bfaed.png)
