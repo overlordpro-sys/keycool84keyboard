@@ -80,6 +80,7 @@ At first, I wanted to make a case that would encompass the entirety of the keybo
 In order to move it from KiCad to my modeling software of choice, Fusion 360, I plotted it into a DXF file and imported it with a 3.5mm thickness (approximate amount of space between the PCB and plate) using [DXF Import Utility.](https://apps.autodesk.com/FUSION/en/Detail/Index?id=3146198746757677787&appLang=en&os=Win64) 
 ![image](https://user-images.githubusercontent.com/64398319/163076669-806fe629-d160-4fd3-8334-9b8d3aad0fc6.png)
 After that, I exported each part into Cura with Fusion's built in exporter, merged the models into one project, and exported the G-code file for my 3D printer. 
+
 ![image](https://user-images.githubusercontent.com/64398319/163076444-9f08e2bd-0422-494a-8ac4-8bb8a6fc309e.png)
 ![image](https://user-images.githubusercontent.com/64398319/163076477-ad4a812a-ee4c-41ad-8c8a-6064a645b61d.png)
 ![image](https://user-images.githubusercontent.com/64398319/163076375-7473896c-d5f1-4080-9028-d571c682d53a.png)
