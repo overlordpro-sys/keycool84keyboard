@@ -64,10 +64,17 @@ After exporting that to a DXF and removing any duplicate geometry, it was ready 
 
 ![image](https://user-images.githubusercontent.com/64398319/156915136-90c74858-9eef-4488-aee6-487e9e8ca6b9.png)
 
-For the plate material, I chose stainless steel for its price and for look. After doing some research, the company I had cut the plate out for me was SendCutSend. In order for the switches to slot into the plate, the plate had to be a certain width, so the 0.060 inch (about 1.5mm) thick stainless steel material SendCutSend featured was perfect. 
+For the plate material, I chose stainless steel for its price and look. After doing some research, the company I had cut the plate out for me was SendCutSend. In order for the switches to slot into the plate, the plate had to be a certain width, so the 0.060 inch (about 1.5mm) thick stainless steel material SendCutSend featured was perfect. 
 
 # The Supports
 
-If I didn't include supports between the metal plate and the PCB, tightening the nut and bolt could cause damage to the PCB. The 3D printer my family had at the time had a small printing area, so I couldn't print something that would encompass or fit between the entirety of the keyboard. Printing it in multiple parts would be difficult as well, since the print would be so thin. The best I could compromise was to print two small pieces with bolt holes that would fit in the ~3.5mm space between the plate and PCB.
+At first, I wanted to make a case that would encompass the entirety of the keyboard. However, the 3D printer I had at home would not be large enough to print it in one piece, and printing it in multiple pieces would make it weak. At the very least, I wanted to try and print something that would fill some of the gap between the plate and PCB for the bolt. In the end, I decided to print one 3.5mm thick piece for each side. 
+![image](https://user-images.githubusercontent.com/64398319/163069469-5db6c803-8254-4282-bb52-5a77cc765ab5.png)
+In order to 3D print it, I plotted it into a DXF file and imported it into Autodesk Fusion 360 using [DXF Import Utility](https://apps.autodesk.com/FUSION/en/Detail/Index?id=3146198746757677787&appLang=en&os=Win64)
+After that I used Fusion's export to 3D print to export each part into Cura, merged the models into one project, and exported the G-code file for our printer. 
+![image](https://user-images.githubusercontent.com/64398319/163076444-9f08e2bd-0422-494a-8ac4-8bb8a6fc309e.png)
+![image](https://user-images.githubusercontent.com/64398319/163076477-ad4a812a-ee4c-41ad-8c8a-6064a645b61d.png)
+![image](https://user-images.githubusercontent.com/64398319/163076375-7473896c-d5f1-4080-9028-d571c682d53a.png)
 
-notes: removed everything almost from kicad pcb file, exported to dxf, used autodesk fusion 360 dxf importer utility using 3.50mm thickness, file 3d print, export to cura
+
+
