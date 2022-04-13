@@ -84,6 +84,57 @@ After that, I exported each part into Cura with Fusion's built in exporter, merg
 ![image](https://user-images.githubusercontent.com/64398319/163076477-ad4a812a-ee4c-41ad-8c8a-6064a645b61d.png)
 ![image](https://user-images.githubusercontent.com/64398319/163076375-7473896c-d5f1-4080-9028-d571c682d53a.png)
 
+# Software
+To communicate the keystrokes, I used the Arduino libararies [Keypad](https://playground.arduino.cc/Code/Keypad/) and [Keyboard](https://www.arduino.cc/reference/en/language/functions/usb/keyboard/). The best thing about the Keypad library is that it supports N-key rollover to intepret multiple keypresses at the same time. For my keyboard, I edited Keypad's provided example. I added which keys I needed, edited the pins to use, and had it use Keyboard to send keystrokes instead of just printing them to console. 
 
+```javascript
+#include <Keypad.h>
+#include <Keyboard.h>
+
+const byte ROWS = 6;
+const byte COLS = 14; 
+char keys[ROWS][COLS] = {
+  {KEY_ESC,KEY_F1,KEY_F2,KEY_F3,KEY_F4,KEY_F5,KEY_F6,KEY_F7,KEY_F8,KEY_F9,KEY_F10,KEY_F11,206,KEY_HOME},
+  {'`','1','2','3','4','5','6','7','9','0','-',KEY_F12,KEY_INSERT,KEY_PAGE_UP},
+  {KEY_TAB,'q','w','e','r','t','y','8','o','p','[','=',KEY_BACKSPACE,KEY_PAGE_DOWN},
+  {KEY_CAPS_LOCK,'a','s','d','f','g','u','i','l',';',39,']',92,KEY_DELETE},
+  {KEY_LEFT_SHIFT,'z','x','c','v','h','j','k','.','/',KEY_RIGHT_SHIFT,KEY_RETURN,KEY_UP_ARROW,' '},
+  {KEY_LEFT_CTRL,KEY_LEFT_GUI,KEY_LEFT_ALT,32,'b','n','m',',',KEY_RIGHT_ALT,KEY_RIGHT_GUI,KEY_RIGHT_CTRL,KEY_LEFT_ARROW,KEY_DOWN_ARROW,KEY_RIGHT_ARROW}
+};
+
+byte rowPins[ROWS] = {18,19,20,21,22,23}; 
+byte colPins[COLS] = {13,12,11,10,9,8,7,6,5,4,3,2,0,1}; 
+Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+
+void setup() {
+    Keyboard.begin();
+}
+
+void loop() {
+    if (kpd.getKeys())
+    {
+        for (int i=0; i<LIST_MAX; i++)   
+        {
+            if ( kpd.key[i].stateChanged )   
+            {
+                switch (kpd.key[i].kstate) { 
+                    case PRESSED:
+                    Keyboard.press(kpd.key[i].kchar);  
+                break;
+                    case HOLD:
+                    Keyboard.press(kpd.key[i].kchar); 
+                break;
+                    case RELEASED:
+                    Keyboard.release(kpd.key[i].kchar);  
+                break;
+                    case IDLE:
+                break;
+                }
+            }
+        }
+    }
+} 
+```
+# The Finished Product
 
 ![image](https://user-images.githubusercontent.com/64398319/163095992-90e54a77-97ab-4044-b17c-40da664bfaed.png)
