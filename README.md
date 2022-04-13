@@ -71,6 +71,7 @@ For the plate material, I chose stainless steel for its price and look. After do
 At first, I wanted to make a case that would encompass the entirety of the keyboard. However, the 3D printer I had at home would not be large enough to print it in one piece, and printing it in multiple pieces would make it weak. At the very least, I wanted to try and print something that would fill some of the gap between the plate and PCB for the bolt. In the end, I decided to print one 3.5mm thick piece for each side. 
 ![image](https://user-images.githubusercontent.com/64398319/163069469-5db6c803-8254-4282-bb52-5a77cc765ab5.png)
 In order to 3D print it, I plotted it into a DXF file and imported it into Autodesk Fusion 360 using [DXF Import Utility](https://apps.autodesk.com/FUSION/en/Detail/Index?id=3146198746757677787&appLang=en&os=Win64)
+![image](https://user-images.githubusercontent.com/64398319/163076669-806fe629-d160-4fd3-8334-9b8d3aad0fc6.png)
 After that I used Fusion's export to 3D print to export each part into Cura, merged the models into one project, and exported the G-code file for our printer. 
 ![image](https://user-images.githubusercontent.com/64398319/163076444-9f08e2bd-0422-494a-8ac4-8bb8a6fc309e.png)
 ![image](https://user-images.githubusercontent.com/64398319/163076477-ad4a812a-ee4c-41ad-8c8a-6064a645b61d.png)
