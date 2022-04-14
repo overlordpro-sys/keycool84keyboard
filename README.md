@@ -1,10 +1,10 @@
-## How I made my keyboard from scratch (pretty much)
+## How I Made My Mechanical Keyboard
 
-A while back I was looking into getting a new mechanical keyboard with linear switches. I was kind of tired of the name brand keyboards like Corsair and Logitech, as they were loud and had unlubed switches, making each keypress feel terrible as well. After researching a bit, I decided to build my own instead of buying it, as it could be a fun project. In the end, that proved true and I learned a lot about the inner workings of mechanical keyboards and PCB design. 
+A few months ago, I was looking into getting a new mechanical keyboard with linear switches. I had grown tired of the name brand keyboards like Corsair and Logitech who did not lubricate their switches. This made each keypress loud and unsatisfying. After doing some research, I decided to build my own instead of buying it. Most people who build custom keyboards buy a predesigned PCB. However, I wanted to design the PCB myself because I thought it would be fun. In the end, that proved true and I learned a lot about the inner workings of mechanical keyboards and PCB design. 
 
 # Design
 
-The switch layout I chose was the Keycool84 layout, featuring both arrow keys and a function row while still being relatively compact. After spending a day or two thinking about how to keep everything together, the design I went with featured a metal plate, 4 bolts, two 3D printed supports for the bolts in the middle layer, and the PCB on the bottom. the bolts would also help to create a slight incline. By using supports in between, I could avoid having to 3D print and piece together a large case that mechanical keyboards usually have. The arduino would be on the bottom under one of the bolts. 
+The switch layout I chose was the Keycool84 layout, featuring both arrow keys and a function row while still being relatively compact. After spending a day or two thinking about how to piece each component together, the design I went with featured a metal plate, 4 M4x10 bolts, two 3D printed supports for the bolts in the middle layer, and the PCB on the bottom. The bolts would also serve as a stand and create a slight incline. By using supports in between, I could avoid having to 3D print and piece together a large case that mechanical keyboards usually have. The Arduino would be placed to the side under one of the bolts. 
 
 ![image](https://user-images.githubusercontent.com/64398319/158050262-5e15bb89-1599-4170-9868-493a6f08a26c.png)
 ![image](https://user-images.githubusercontent.com/64398319/158050263-b1dc7c28-3cb3-4891-8bff-14244251af5b.png)
@@ -13,41 +13,41 @@ The switch layout I chose was the Keycool84 layout, featuring both arrow keys an
 
 
 To get an accurate outline for the keyboard, I used the Keycool84 preset layout on keyboard-layout-editor.com.
-To make sure I could use the layout as a template for plate cutout later, I selected all of the keys and set each switch to use Cherry MX Kailh switch cutouts.
+In addition, I selected all of the keys and set each switch to use Cherry MX Kailh switch cutouts for my switch of choice, Kailh speed silvers, so I could use it to help with the plate cutout later on.
 ![image](https://user-images.githubusercontent.com/64398319/156913471-94514249-7342-45ae-94da-e16879379bad.png)
-I transfered the raw data from the layout editor to http://builder.swillkb.com/ to generate a DXF file that I could actually use in KICAD.
+I transfered the raw data from the layout editor to a [plate and case builder website](http://builder.swillkb.com/) to generate a DXF file that I could actually use in KiCAD.
 ![image](https://user-images.githubusercontent.com/64398319/156913561-4abd1c04-be77-456a-a2bf-ec5f8076c4ff.png)
 
 # Wiring
 
-The most important part of this keyboard is naturally its wiring. Technically, each switch could be wired to two pins to detect switch input. This obviously is extremely inefficient and would use a lot of pins. The solution to this problem is wiring the switches in a gridlike manner. One issue with this, is that if multiple keys are pressed, some keypresses can be registered incorrectly due to current traveling backwards. This is solved by placing a diode with each switch to prevent this backwards flow and makes each keypress distinguishable from others by the Arduino. The way each switch will be connected looks approximately like this:
+The most important part of this keyboard is naturally its wiring. Technically, each switch could be wired to two pins to detect switch input. This obviously is extremely inefficient and would use a lot of pins. The solution to this problem is wiring the switches in a gridlike manner. One issue with this, is that if multiple keys are pressed, some keypresses can be registered incorrectly due to current traveling backwards. This is solved by placing a diode with each switch to prevent this backwards flow and makes each keypress distinguishable from other keys by the Arduino. Each switch is wired approximately like so:
 ![image](https://user-images.githubusercontent.com/64398319/157819797-67bfb5fa-5837-4856-916b-f1252c01b59c.png)
 
-The last thing to consider was the location for each switch in the 6x14 grid. To get an idea of where each switch on the grid should be placed, I sketched it out in my note taking app. 
+The last thing to consider was the location for each switch in the 6x14 grid. To get an idea of where each switch on the grid should be placed, I sketched it out in an app. 
 
 ![image](https://user-images.githubusercontent.com/64398319/158050202-1c3fefc8-b831-4bbc-afda-89fef113b22c.png)
 
 # The PCB
 
-The next step was actually designing a PCB for this keyboard. For simplicity and to make sure I had enough pins, I decided to use an Arduino Pro Micro for the controller. 
+The next step was designing the PCB for this keyboard. For simplicity and to ensure I had enough pins, I decided to use an Arduino Pro Micro for the controller. 
 For the symbols and footprints for the switches and Arduino, I used two KiCad libraries:
 https://github.com/ai03-2725/MX_Alps_Hybrid 
 https://github.com/Biacco42/ProMicroKiCad 
 
-For the necessary diodes, I downloaded the ECAD Model for the 1N4148W-7-F diode at Mouser Electronics (https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/1N4148W-7-F?qs=LHX0FizJzg7Ae9ZM8LTAWw%3D%3D) and converted it into a KiCad library using the Mouser LibraryLoader. 
+For the necessary diodes, I downloaded the ECAD Model for the [1N4148W-7-F diode](https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/1N4148W-7-F?qs=LHX0FizJzg7Ae9ZM8LTAWw%3D%3D) at Mouser Electronics  and converted it into a KiCad library using the Mouser LibraryLoader. 
 
-After including the libraries in my KiCad project file, I placed and wired the switches in the grid format. 
+After including the libraries in my KiCad project file, I first wired the switches in a grid format in the schematics file. Then I assigned each row and column to a pin on the Arduino's symbol.
 ![image](https://user-images.githubusercontent.com/64398319/156914644-28b6951b-53ae-49a6-a32d-6735d501118d.png)
 
-After I was finished with the schematic, I used KiCad's Pcbnew to place footprints. Using the DXF file I generated before, I imported the file and moved each associated switch and diode footprint to each cutout on the DXF. I placed the Arduino's footprint to the left and drew a border around the entire PCB. To be able to secure my keyboard plate to the PCB, I also added four holes on each corner where I could use a nut and bolt. 
+After I was finished with the schematic, I used KiCad's Pcbnew to design the PCB. Using the DXF file I generated before, I imported the file and moved each associated switch and diode footprint to each cutout on the DXF. I placed the Arduino's footprint to the left and drew a border around the entire PCB. To be able to secure my keyboard plate to the PCB, I also added four holes with a diameter slightly larger than the bolt diameter on each corner where I could use a nut and bolt. 
 
 ![image](https://user-images.githubusercontent.com/64398319/157821436-4c10f5d9-3811-41f9-b8b4-d5429ce21891.png)
 
-After placing all of the footprints, I routed the PCB using Freerouter. The overall complexity of the board was not too high, so using an autorouter wouldn't cause any issues.
+After placing all of the footprints, I routed the PCB using Freerouter. Overall, the board was simple and using an autorouter wouldn't cause any issues.
 
 ![image](https://user-images.githubusercontent.com/64398319/158049166-65c9d70e-f2d0-451b-9de9-b5cfaf715907.png)
 
-After adding a random bit of silkscreen for fun, this was the finished result:
+After adding some silkscreeneening out of curiosity, this was the finished result:
 
 ![image](https://user-images.githubusercontent.com/64398319/158049203-7c9f8214-b44d-4726-a1ab-1919ce9bcc8b.png)
 
@@ -55,11 +55,11 @@ After adding a random bit of silkscreen for fun, this was the finished result:
 Using the built in 3D PCB viewer, took a look at the 3D model of what the PCB would look like. It was really neat seeing something I had designed myself.
 ![image](https://user-images.githubusercontent.com/64398319/157820904-c71715d5-1f2b-48c7-a5bc-12e582cc88d9.png)
 
-Here's what they looked like when they came:
+After generating the neccessary Gerber files, I placed my order with JLCPCB and chose a white PCB. Here's what the PCBs looked like when they came:
 ![image](https://user-images.githubusercontent.com/64398319/163095199-d4282166-2887-47cb-b82f-f2c585919dc5.png)
 
 # The Plate
-The easiest way to maintain the same size and location for the screw holes was to make a copy of the old PCB file. After removing the switches, diodes, and Arduino footprints on a duplicate file, I ended up with a plain outline with screw holes. 
+The easiest way to maintain the same size and location for the screw holes was to make a copy of the old PCB file. After removing the switches, diodes, and Arduino footprints on the duplicate project, I ended up with a plain outline with screw holes. 
 
 ![image](https://user-images.githubusercontent.com/64398319/156914999-5e441838-1f00-4a85-bbc8-6bfe073fd34e.png)
 
@@ -74,7 +74,7 @@ Unfortunately, I didn't take a very good picture before I soldered everything to
 
 # 3D Printing the middle
 
-At first, I wanted to make a case that would encompass the entirety of the keyboard. However, the 3D printer I had at home would not be large enough to print it in one piece. Printing it in multiple pieces would require me to glue the pieces together and would make it less durable. At the very least, I wanted to make something that would fill some of the ugly gap between the plate and PCB. Filling in the gaps in the front and back of the keyboard would make it too large to print on my printer, so I could only make something for the right and left. In the end, I decided to make two rectangles with the cutouts for the bolts. 
+At first, I wanted to make a case that would encompass the entirety of the keyboard. However, the 3D printer I had at home would not be large enough to print it in one piece. Printing it in multiple pieces would require me to glue the pieces together and would make it less durable. I also didn't want to bother sending an order to a third party printing service and increasing my total build cost. At the very least, I wanted to make something that would fill some of the ugly gap between the plate and PCB. Filling in the gaps in the front and back of the keyboard would make it too large to print on my printer, so I could only make something for the right and left. In the end, I decided to make two rectangles with the cutouts for the bolts. 
 ![image](https://user-images.githubusercontent.com/64398319/163069469-5db6c803-8254-4282-bb52-5a77cc765ab5.png)
 
 In order to move it from KiCad to my modeling software of choice, Fusion 360, I plotted it into a DXF file and imported it with a 3.5mm thickness (approximate amount of space between the PCB and plate) using [DXF Import Utility.](https://apps.autodesk.com/FUSION/en/Detail/Index?id=3146198746757677787&appLang=en&os=Win64) 
@@ -137,6 +137,6 @@ void loop() {
 } 
 ```
 # The Finished Product
-After fixing a small issue with my soldering using a spare wire, it was finished!
+After tediously placing and soldering each switch and surface mounted diode, it was almost complete. After fixing a small issue with my soldering using a spare wire and tightening the bolts, it was finished! If I do make a another keyboard in the future, I would definitely try to use something other than an Arduino that I could fully integrate into the PCB.
 ![image](https://user-images.githubusercontent.com/64398319/163095992-90e54a77-97ab-4044-b17c-40da664bfaed.png)
 ![image](https://user-images.githubusercontent.com/64398319/163123863-2121ebb1-3a9c-4fe3-bfff-c6a5e213ee7c.png)
