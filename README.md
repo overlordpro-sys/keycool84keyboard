@@ -1,10 +1,10 @@
 ## How I made my keyboard from scratch (pretty much)
 
-A while back I was looking into getting a new mechanical keyboard with linear switches. I was kind of tired of the name brand keyboards like Corsair and Logitech, as they were loud and had unlubed switches, making each keypress feel terrible as well. After researching a bit, I decided to build my own instead of buying it, as it could be a fun project.
+A while back I was looking into getting a new mechanical keyboard with linear switches. I was kind of tired of the name brand keyboards like Corsair and Logitech, as they were loud and had unlubed switches, making each keypress feel terrible as well. After researching a bit, I decided to build my own instead of buying it, as it could be a fun project. In the end, that proved true and I learned a lot about the inner workings of mechanical keyboards and PCB design. 
 
 # Design
 
-The switch layout I went with was the Keycool84 layout, featuring both arrow keys and a function row while still being relatively compact. After spending a day or two thinking about how to keep everything together, the design I went with featured a metal plate, 4 bolts, two 3D printed supports for the bolts in the middle layer, and the PCB on the bottom. the bolts would also help to create a slight incline. By using supports in between, I could avoid having to 3D print and piece together a large case that mechanical keyboards usually have. The arduino would be on the bottom under one of the bolts. 
+The switch layout I chose was the Keycool84 layout, featuring both arrow keys and a function row while still being relatively compact. After spending a day or two thinking about how to keep everything together, the design I went with featured a metal plate, 4 bolts, two 3D printed supports for the bolts in the middle layer, and the PCB on the bottom. the bolts would also help to create a slight incline. By using supports in between, I could avoid having to 3D print and piece together a large case that mechanical keyboards usually have. The arduino would be on the bottom under one of the bolts. 
 
 ![image](https://user-images.githubusercontent.com/64398319/158050262-5e15bb89-1599-4170-9868-493a6f08a26c.png)
 ![image](https://user-images.githubusercontent.com/64398319/158050263-b1dc7c28-3cb3-4891-8bff-14244251af5b.png)
