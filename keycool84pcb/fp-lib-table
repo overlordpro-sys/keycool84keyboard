@@ -1,0 +1,8 @@
+(fp_lib_table
+  (lib (name keebs)(type KiCad)(uri "C:/Users/brent/Downloads/keebs.pretty-master (1)/keebs.pretty-master")(options "")(descr ""))
+  (lib (name MX_Only)(type KiCad)(uri C:/Users/brent/Downloads/MX_Alps_Hybrid-master/MX_Alps_Hybrid-master/MX_Only.pretty)(options "")(descr ""))
+  (lib (name MX_Alps_Hybrid)(type KiCad)(uri C:/Users/brent/Downloads/MX_Alps_Hybrid-master/MX_Alps_Hybrid-master/MX_Alps_Hybrid.pretty)(options "")(descr ""))
+  (lib (name promicro)(type KiCad)(uri C:/Users/brent/Downloads/ProMicroKiCad-master/ProMicroKiCad-master/promicro.pretty)(options "")(descr ""))
+  (lib (name SamacSys_Parts)(type KiCad)(uri C:/Users/brent/Desktop/kicadpartslibraryloader/SamacSys_Parts.pretty)(options "")(descr ""))
+  (lib (name Graphic)(type KiCad)(uri ${KIPRJMOD}/Graphic.pretty)(options "")(descr ""))
+)
