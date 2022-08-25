@@ -63,7 +63,7 @@ The easiest way to maintain the same size and location for the screw holes was t
 
 ![image](https://user-images.githubusercontent.com/64398319/156914999-5e441838-1f00-4a85-bbc8-6bfe073fd34e.png)
 
-After exporting that to a DXF and removing any duplicate geometry, it was ready to be cut.
+After exporting that to a DXF and removing any duplicate geometry in LibreCAD, it was ready to be cut.
 
 ![image](https://user-images.githubusercontent.com/64398319/156915136-90c74858-9eef-4488-aee6-487e9e8ca6b9.png)
 
