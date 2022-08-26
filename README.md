@@ -86,7 +86,7 @@ After that, I exported each part into Cura with Fusion's built in exporter, merg
 ![image](https://user-images.githubusercontent.com/64398319/163076375-7473896c-d5f1-4080-9028-d571c682d53a.png)
 
 ## Software
-To communicate the keystrokes, I used the Arduino libararies [Keypad](https://playground.arduino.cc/Code/Keypad/) and [Keyboard](https://www.arduino.cc/reference/en/language/functions/usb/keyboard/). The best thing about the Keypad library is that it supports N-key rollover to intepret multiple keypresses at the same time. For my keyboard, I edited Keypad's provided example. I added which keys I needed, edited the pins to use, and had it use Keyboard to send keystrokes instead of just printing them to console. 
+To communicate the keystrokes, I used the Arduino libraries [Keypad](https://playground.arduino.cc/Code/Keypad/) and [Keyboard](https://www.arduino.cc/reference/en/language/functions/usb/keyboard/). The best thing about the Keypad library is that it supports N-key rollover to intepret multiple keypresses at the same time. For my keyboard, I edited Keypad's provided example. I added which keys I needed, edited the pins to use, and had it use Keyboard to send keystrokes instead of just printing them to console. 
 
 ```javascript
 #include <Keypad.h>
