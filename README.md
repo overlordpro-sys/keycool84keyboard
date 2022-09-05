@@ -1,6 +1,6 @@
-# How I Made My Mechanical Keyboard
+# How I Made My Mechanical Keyboard ([Youtube Video](https://www.youtube.com/channel/UCWsG0tszNpZowuGIkNcHuQw))
 
-A few months ago, I was looking into getting a new mechanical keyboard with linear switches. I had grown tired of the name brand keyboards like Corsair and Logitech who did not lubricate their switches. This made each keypress loud and unsatisfying. After doing some research, I decided to build my own instead of buying it. Most people who build custom keyboards buy a predesigned PCB. However, I wanted to design the PCB myself because I thought it would be fun. In the end, that proved true and I learned a lot about the inner workings of mechanical keyboards and PCB design. 
+About a year ago, I was looking into getting a new mechanical keyboard with linear switches. I had grown tired of the name brand keyboards like Corsair and Logitech who did not lubricate their switches. This made each keypress loud and unsatisfying. After doing some research, I decided to build my own instead of buying it. Most people who build custom keyboards buy a predesigned PCB. However, I wanted to design the PCB myself because I thought it would be fun. In the end, that proved true and I learned a lot about the inner workings of mechanical keyboards and PCB design. 
 
 ## Design
 
